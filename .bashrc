@@ -120,7 +120,7 @@ fi
 
 # start my custom configuration
 
-PATH=$PATH:~/bin
+PATH=$PATH:~/dotfiles/bin:~/bin
 
 export PATH
 export EDITOR=vim
