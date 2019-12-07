@@ -396,3 +396,6 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+set path+=**
+set number
+command! MakeTags !ctags -R .
