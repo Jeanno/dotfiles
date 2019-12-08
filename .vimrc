@@ -125,8 +125,10 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme desert
+
+colorscheme monokai-bold
 set background=dark
+set cursorline
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -399,3 +401,4 @@ endfunction
 set path+=**
 set number
 command! MakeTags !ctags -R .
+

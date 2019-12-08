@@ -17,3 +17,7 @@ echo "
 :source $DIR/.vimrc
 \" END Dotfile install
 " >> ~/.vimrc
+
+mkdir -p ~/.vim/colors
+ln -s $DIR/monokai-bold.vim ~/.vim/colors/monokai-bold.vim
+
