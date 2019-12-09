@@ -1,0 +1,12 @@
+export EDITOR=vim
+
+viract() {
+    if [ -z "$1" ]; then
+        ls ~/env/;
+        return
+    fi
+    source ~/env/$1/bin/activate
+}
+
+
+

@@ -5,11 +5,13 @@ echo "Installing $DIR..."
 
 
 # .bashrc install
-echo "
+myrc="
 # Dotfile install
-source $DIR/.bashrc
+source $DIR/.myrc
 # END Dotfile install
-" >> ~/.bashrc
+"
+echo $myrc >> ~/.bashrc
+echo $myrc >> ~/.zshrc
 
 # .vimrc install
 echo "
