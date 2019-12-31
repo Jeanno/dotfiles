@@ -401,4 +401,5 @@ endfunction
 set path+=**
 set number
 command! MakeTags !ctags -R .
+set complete-=i
 

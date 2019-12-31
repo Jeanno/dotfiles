@@ -8,5 +8,4 @@ viract() {
     source ~/env/$1/bin/activate
 }
 
-
-
+export PATH=$PATH:$DOTFILE_DIR/bin
