@@ -22,5 +22,10 @@ echo "
 " >> ~/.vimrc
 
 mkdir -p ~/.vim/colors
-ln -s $DIR/monokai-bold.vim ~/.vim/colors/monokai-bold.vim
+theme_file=~/.vim/colors/monokai-bold.vim
+if [ -f "$theme_file" ]; then
+    echo "Vim theme file existed. Skipping..."
+else
+    ln -s $DIR/monokai-bold.vim $theme_file
+fi
 
