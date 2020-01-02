@@ -8,6 +8,6 @@ viract() {
     source ~/env/$1/bin/activate
 }
 
-
 alias gpp="git pull && git push"
 
+export PATH=$PATH:$DOTFILE_DIR/bin

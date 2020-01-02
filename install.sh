@@ -7,11 +7,12 @@ echo "Installing $DIR..."
 # .bashrc install
 myrc="
 # Dotfile install
-source $DIR/.myrc
+export DOTFILE_DIR=$DIR
+source \$DOTFILE_DIR/.myrc
 # END Dotfile install
 "
-echo $myrc >> ~/.bashrc
-echo $myrc >> ~/.zshrc
+echo "$myrc" >> ~/.bashrc
+echo "$myrc" >> ~/.zshrc
 
 # .vimrc install
 echo "
