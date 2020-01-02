@@ -9,4 +9,5 @@ viract() {
 }
 
 
+alias gpp="git pull && git push"
 
