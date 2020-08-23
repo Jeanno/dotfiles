@@ -400,6 +400,22 @@ endfunction
 
 set path+=**
 set number
+set relativenumber
 command! MakeTags !ctags -R .
 set complete-=i
+
+" file browsing
+let g:netrw_liststyle = 3
+let g:necftrw_banner = 0
+let g:netrw_altv = 1
+
+" Disable arrowkeys
+" w word, b back, e end of word, ge backward
+" f find, t before find
+" c remove to next cursor
+" x remove next char
+
+" :range co. copy multiple lines
+" Surround plugin
+
 
