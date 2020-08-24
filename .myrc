@@ -1,4 +1,6 @@
 export EDITOR=vim
+set -o vi
+bindkey -v
 
 viract() {
     if [ -z "$1" ]; then
@@ -11,3 +13,4 @@ viract() {
 alias gpp="git pull && git push"
 
 export PATH=$PATH:$DOTFILE_DIR/bin
+
