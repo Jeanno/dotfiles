@@ -1,6 +1,5 @@
 export EDITOR=vim
 set -o vi
-bindkey -v
 
 viract() {
     if [ -z "$1" ]; then
@@ -11,6 +10,8 @@ viract() {
 }
 
 alias gpp="git pull && git push"
+alias gs="git status"
+alias gdc="git diff --cached"
 
 export PATH=$PATH:$DOTFILE_DIR/bin
 
