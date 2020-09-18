@@ -401,7 +401,6 @@ endfunction
 set path+=**
 set number
 set relativenumber
-command! MakeTags !ctags -R .
 set complete-=i
 
 " file browsing
@@ -418,4 +417,11 @@ let g:netrw_altv = 1
 " :range co. copy multiple lines
 " Surround plugin
 
+set fdm=indent
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+call plug#end()
