@@ -15,8 +15,6 @@ let g:mapleader = " "
 
 " Fast saving
 nmap <leader>w :w!<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>r :Rg<cr>
 
 """ VIM UI
 " Set 7 lines to the cursor - when moving vertically using j/k
@@ -229,11 +227,13 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 """ vimgrep searching and cope displaying
 
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>g :Rg <c-r><c-w>
+nnoremap <leader>t :BTags <c-r><c-w>
+nnoremap <leader>T :Tags <c-r><c-w>
+
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
-
-" Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
 " Vimgreps in the current file
 map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
@@ -370,6 +370,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
