@@ -349,6 +349,7 @@ set path+=**
 set number
 set relativenumber
 set complete-=i
+set colorcolumn=80,100
 
 " file browsing
 let g:netrw_liststyle = 3
@@ -373,4 +374,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'dense-analysis/ale'
 
 call plug#end()
+
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_sign_column_always = 1
 
