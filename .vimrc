@@ -381,12 +381,15 @@ let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
 let s:recordedLine = -1
-function MyFunc()
+function! PlayLine()
     if line(".") != s:recordedLine
         let s:recordedLine = line('.')
         let myline = shellescape(getline('.'))
         "!/Users/jeanno/personal/playmidi/env/bin/python /Users/jeanno/personal/playmidi/main.py myline > /dev/null &
-        echom "!/Users/jeanno/personal/playmidi/env/bin/python" "/Users/jeanno/personal/playmidi/main.py" myline ">" "/dev/null" "&"
+        "silent exec "!/Users/jeanno/personal/playmidi/env/bin/python /Users/jeanno/personal/playmidi/main.py " . myline . " > /dev/null &"
+        "silent exec "!echo " . myline . " > /dev/null &"
     endif
 endfunction
-autocmd CursorMoved * call MyFunc()
+autocmd CursorMoved * call PlayLine()
+
+set t_TE= t_TI=
