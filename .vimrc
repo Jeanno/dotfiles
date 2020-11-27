@@ -381,13 +381,19 @@ let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
 let s:recordedLine = -1
+let s:lastPid = 0
 function! PlayLine()
     if line(".") != s:recordedLine
-        let s:recordedLine = line('.')
-        let myline = shellescape(getline('.'))
+        if s:lastPid
+          let strippedPid = substitute(s:lastPid, '[^0-9]*', '', 'g')
+          silent exec "!kill -9 " strippedPid " 2> /dev/null &"
+        endif
+        let myline = shellescape(getline('.'), "#")
+        let myCommand = "/Users/jeanno/personal/playmidi/env/bin/python /Users/jeanno/personal/playmidi/main.py " . myline . " > /dev/null &; echo $!;"
+        let s:lastPid = system(myCommand)
         "!/Users/jeanno/personal/playmidi/env/bin/python /Users/jeanno/personal/playmidi/main.py myline > /dev/null &
-        "silent exec "!/Users/jeanno/personal/playmidi/env/bin/python /Users/jeanno/personal/playmidi/main.py " . myline . " > /dev/null &"
-        "silent exec "!echo " . myline . " > /dev/null &"
+        "let mycmd ="!echo " myline " > /dev/null &"
+        let s:recordedLine = line('.')
     endif
 endfunction
 autocmd CursorMoved * call PlayLine()
