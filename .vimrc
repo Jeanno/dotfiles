@@ -366,6 +366,7 @@ let g:netrw_altv = 1
 " Surround plugin
 
 set fdm=indent
+set foldlevel=2
 
 call plug#begin('~/.vim/plugged')
 
@@ -373,29 +374,23 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'dense-analysis/ale'
 
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-sleuth'
+
+"Plug 'pangloss/vim-javascript'    " JavaScript support
+"Plug 'leafgarland/typescript-vim' " TypeScript syntax
+"Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+"Plug 'jparise/vim-graphql'        " GraphQL syntax
+
+Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+
 call plug#end()
 
+let g:coc_global_extensions = [ 'coc-tsserver' ]
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
-
-let s:recordedLine = -1
-let s:lastPid = 0
-function! PlayLine()
-    if line(".") != s:recordedLine
-        if s:lastPid
-          let strippedPid = substitute(s:lastPid, '[^0-9]*', '', 'g')
-          silent exec "!kill -9 " strippedPid " 2> /dev/null &"
-        endif
-        let myline = shellescape(getline('.'), "#")
-        let myCommand = "/Users/jeanno/personal/playmidi/env/bin/python /Users/jeanno/personal/playmidi/main.py " . myline . " > /dev/null &; echo $!;"
-        let s:lastPid = system(myCommand)
-        "!/Users/jeanno/personal/playmidi/env/bin/python /Users/jeanno/personal/playmidi/main.py myline > /dev/null &
-        "let mycmd ="!echo " myline " > /dev/null &"
-        let s:recordedLine = line('.')
-    endif
-endfunction
-autocmd CursorMoved * call PlayLine()
 
 set t_TE= t_TI=
