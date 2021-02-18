@@ -395,7 +395,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-sleuth'
 
-"Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'pangloss/vim-javascript'    " JavaScript support
 "Plug 'leafgarland/typescript-vim' " TypeScript syntax
 "Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 "Plug 'jparise/vim-graphql'        " GraphQL syntax
@@ -405,6 +405,19 @@ Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 call plug#end()
 
 let g:coc_global_extensions = [ 'coc-tsserver' ]
+
+function! s:MyGoToDefinition()
+  if CocAction('jumpDefinition')
+    return v:true
+  endif
+
+  let ret = execute("silent! normal \<C-]>")
+  if ret =~ "Error"
+    call searchdecl(expand('<cword>'))
+  endif
+endfunction
+
+nmap <silent> gd :call <SID>MyGoToDefinition()<CR>
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
