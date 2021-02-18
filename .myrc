@@ -14,6 +14,8 @@ alias gs="git status"
 alias gvdc="git difftool --tool=vimdiff --no-prompt --cached"
 alias gvd="git difftool --tool=vimdiff --no-prompt"
 
+alias vim="nvim"
+
 export PATH=$PATH:$DOTFILE_DIR/bin
 
 if type rg &> /dev/null; then

@@ -87,6 +87,7 @@ endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+set fileencoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -130,7 +131,6 @@ vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
-
 """ Moving around, tabs, windows and buffers
 
 " Treat long lines as break lines (useful when moving around in them)
@@ -138,8 +138,9 @@ map j gj
 map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+"map <space> /
+"map <c-space> ?
+
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -149,6 +150,9 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+nnoremap <M-h> :vertical resize -2<cr>
+nnoremap <M-l> :vertical resize +2<cr>
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -350,6 +354,19 @@ set number
 set relativenumber
 set complete-=i
 set colorcolumn=80,100
+set mouse=a
+
+set splitbelow
+set splitright
+
+set updatetime=300
+set timeoutlen=500
+
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+vnoremap > >gv
+vnoremap < <gv
 
 " file browsing
 let g:netrw_liststyle = 3
