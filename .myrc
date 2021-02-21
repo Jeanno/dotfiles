@@ -15,6 +15,7 @@ alias gvdc="git difftool --tool=vimdiff --no-prompt --cached"
 alias gvd="git difftool --tool=vimdiff --no-prompt"
 
 alias vim="nvim"
+alias v="nvim"
 
 export PATH=$PATH:$DOTFILE_DIR/bin
 
