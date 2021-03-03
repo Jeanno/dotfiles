@@ -171,10 +171,10 @@ map k gk
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 nnoremap <M-h> :vertical resize -2<cr>
 nnoremap <M-l> :vertical resize +2<cr>
@@ -211,12 +211,6 @@ autocmd BufReadPost *
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
 if has("mac") || has("macunix")
   nmap <D-j> <M-j>
   nmap <D-k> <M-k>
@@ -240,6 +234,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 "" vimgrep searching and cope displaying
 
 nnoremap <leader>f :Files<cr>
+nnoremap <C-p> :Files<cr>
 nnoremap <leader>g :Rg <c-r><c-w>
 nnoremap <leader>t :BTags <c-r><c-w>
 nnoremap <leader>T :Tags <c-r><c-w>
@@ -374,19 +369,27 @@ let g:netrw_altv = 1
 
 call plug#begin('~/.vim/plugged')
 
+"" UI
 Plug 'vim-airline/vim-airline'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'dense-analysis/ale'
 
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+"" Enhance
+Plug 'tpope/vim-surround'
+Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-sleuth'
 
+"" Fuzzy
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+"" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+"" Lint and syntax
+Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'    " JavaScript support
-"Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
 "Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-"Plug 'jparise/vim-graphql'        " GraphQL syntax
 
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 
