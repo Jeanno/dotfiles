@@ -43,9 +43,6 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
 " For regular expressions turn magic on
 set magic
 
@@ -58,7 +55,7 @@ set mat=2
 set noerrorbells
 set novisualbell
 set t_vb=
-set tm=500
+set tm=400
 
 "" UI
 " Enable syntax highlighting
