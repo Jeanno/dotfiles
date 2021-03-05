@@ -173,10 +173,10 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
-nnoremap <M-h> :vertical resize -2<cr>
-nnoremap <M-l> :vertical resize +2<cr>
-nnoremap <M-j> :resize -2<cr>
-nnoremap <M-k> :resize +2<cr>
+nnoremap <M-h> :vertical resize -3<cr>
+nnoremap <M-l> :vertical resize +3<cr>
+nnoremap <M-j> :resize -3<cr>
+nnoremap <M-k> :resize +3<cr>
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -410,4 +410,6 @@ nmap <silent> gd :call <SID>MyGoToDefinition()<CR>
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
+
+nnoremap <leader>n :sp ~/notes.md<cr>
 
