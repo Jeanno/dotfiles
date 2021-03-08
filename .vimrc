@@ -167,11 +167,10 @@ map k gk
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move between windows
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+" Tab and windows navigation
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+nnoremap <C-j> <C-W><C-W>
 
 nnoremap <M-h> :vertical resize -3<cr>
 nnoremap <M-l> :vertical resize +3<cr>
