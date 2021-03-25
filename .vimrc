@@ -127,7 +127,7 @@ set splitbelow
 set splitright
 
 set updatetime=300
-set timeoutlen=500
+set timeoutlen=300
 
 set belloff=
 
