@@ -32,3 +32,5 @@ alias v="nvim"
 
 alias n="npm"
 alias nr="npm run"
+
+alias lg="lazygit"

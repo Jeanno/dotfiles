@@ -362,7 +362,8 @@ let g:netrw_altv = 1
 call plug#begin('~/.vim/plugged')
 
 "" UI
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
 
 "" Enhance
 Plug 'tpope/vim-surround'
@@ -388,6 +389,7 @@ Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 call plug#end()
 
 let g:coc_global_extensions = [ 'coc-tsserver' ]
+set noshowmode
 
 function! s:MyGoToDefinition()
   if CocAction('jumpDefinition')
