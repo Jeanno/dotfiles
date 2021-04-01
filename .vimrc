@@ -18,7 +18,7 @@ set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
-"Always show current position
+" Always show current position
 set ruler
 
 " Height of the command bar
@@ -253,8 +253,8 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 "
 map <leader>cc :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+" map <leader>n :cn<cr>
+" map <leader>p :cp<cr>
 
 
 
@@ -337,7 +337,6 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 inoremap jk <Esc>
-inoremap kj <Esc>
 
 vnoremap > >gv
 vnoremap < <gv
@@ -408,5 +407,6 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
-nnoremap <leader>n :sp ~/notes.md<cr>
+nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
+nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
 
