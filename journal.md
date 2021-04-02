@@ -5,11 +5,9 @@ space // start selecting
 enter // copy!
 c-] // tmux paste
 
-
 # Vim Note
+:cn :cp Quickfix navigation
 OS clipboard = Register * 
-
-# Practice
 ctrl + ] (with ctags)
 shift + j
 c word
@@ -28,7 +26,6 @@ https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
 
 # To Learn
 quickfix
-Key Map
 Ex
 H, L
 autocmd
@@ -36,9 +33,4 @@ autocmd
 ## auto marks
 last changed `[
 last selected `<
-
-# Games
-vim-be-good
-train.vim
-
 
