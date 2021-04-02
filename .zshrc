@@ -33,10 +33,13 @@ if type rg &> /dev/null; then
 fi
 
 # Aliases
-alias ga="git add"
 alias gf="git fetch"
+alias gp="git pull"
+alias gP="git push"
 alias gpp="git pull && git push"
 alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
 alias gd="git diff"
 alias gvdc="git difftool --tool=vimdiff --no-prompt --cached"
 alias gvd="git difftool --tool=vimdiff --no-prompt"
@@ -57,3 +60,4 @@ source $THISDIR/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f $THISDIR/.p10k.zsh ]] || source $THISDIR/.p10k.zsh
 
 source $THISDIR/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
