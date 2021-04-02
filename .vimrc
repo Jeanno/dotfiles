@@ -347,6 +347,8 @@ let g:netrw_liststyle = 3
 let g:necftrw_banner = 0
 let g:netrw_altv = 1
 
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 " Disable arrowkeys
 " w word, b back, e end of word, ge backward
 " f find, t before find
