@@ -354,6 +354,9 @@ nnoremap <leader>ev :Vexplore<cr>
 " Auto complete by enter
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" Run last shell command
+nnoremap <leader>r :!<up><cr>
+
 " Disable arrowkeys
 " w word, b back, e end of word, ge backward
 " f find, t before find
