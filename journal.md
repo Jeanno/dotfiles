@@ -6,11 +6,15 @@ enter // copy!
 c-] // tmux paste
 
 # Vim Note
+
+:help g
 :cn :cp Quickfix navigation
+
 OS clipboard = Register * 
 ctrl + ] (with ctags)
-shift + j
+J - join lines
 c word
+cc = change line
 (change this word)
 {
     change this
@@ -24,13 +28,19 @@ FZF
 :Rg <leader>g
 https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
 
-# To Learn
+## To Learn
 quickfix
 Ex
 H, L
 autocmd
 
-## auto marks
+### auto marks
 last changed `[
 last selected `<
 
+
+# lnav notes
+
+:filter-in
+:filter-out
+ctrl-l literal mode

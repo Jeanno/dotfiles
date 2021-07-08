@@ -393,6 +393,7 @@ Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 "Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'apple/swift', {'rtp': 'utils/vim/','name': 'Swift-Syntax'}
 
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
 
@@ -420,4 +421,6 @@ let g:ale_sign_column_always = 1
 
 nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
 nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
+nnoremap <leader>orv :tabe ~/dotfiles/.vimrc<cr> " Open RC for vim
+nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
 
