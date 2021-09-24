@@ -1,18 +1,23 @@
 THISPATH=$0:A
 THISDIR=$(dirname $THISPATH)
 
+##
 # History
+##
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+HISTFILE="~/.cache/zsh/history"
 
-# Edit command
-export EDITOR=vim
-set -o vi
-autoload edit-command-line
-zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey -v
+##
+# File navigation
+#
+# ctrl-t: paste fzf path to cursor
+# alt-c: cd into fzf directory
+# ctrl-r: fuzzy search command history
+
+# z: jump to fuzzy directory
+# cd -<TAB>: jump to previous directories
+##
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
@@ -26,34 +31,35 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
-# FZF
+## FZF
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-# Aliases
-alias gf="git fetch"
-alias gp="git pull"
-alias gP="git push"
-alias gpp="git pull && git push"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-alias gca="git commit --amend"
-alias gd="git diff"
-alias gvdc="git difftool --tool=vimdiff --no-prompt --cached"
-alias gvd="git difftool --tool=vimdiff --no-prompt"
 
-alias v="nvim"
+##
+# File preview
+#
+# bat: cat with syntax highlighting
+##
 
-alias n="npm"
-alias nr="npm run"
+##
+# Edit command
+##
+export EDITOR=vim
+set -o vi
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+bindkey -v
 
-alias lg="lazygit"
-
-# Custom bin
+##
+# Custom scripts
+##
 export PATH=$PATH:$THISDIR/bin
+
+source "$THISDIR/zshrc.d/alias"
 
 # powerlevel10k
 source $THISDIR/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme

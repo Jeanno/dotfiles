@@ -1,0 +1,21 @@
+# Aliases
+alias g="git"
+alias gf="git fetch"
+alias gp="git pull"
+alias gP="git push"
+alias gpp="git pull && git push"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gd="git diff"
+alias gvdc="git difftool --tool=vimdiff --no-prompt --cached"
+alias gvd="git difftool --tool=vimdiff --no-prompt"
+
+alias v="nvim"
+
+alias n="npm"
+alias nr="npm run"
+
+alias lg="lazygit"
+
