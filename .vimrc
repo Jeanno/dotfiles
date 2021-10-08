@@ -227,8 +227,9 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 nnoremap <leader>f :Files<cr>
 nnoremap <C-p> :Files<cr>
-nnoremap <leader>g :Rg <c-r><c-w>
-nnoremap <leader>t :BTags <c-r><c-w>
+nnoremap <leader>g :Rg
+nnoremap <leader>G :Rg <c-r><c-w>
+nnoremap <leader>t :BTags<cr>
 nnoremap <leader>T :Tags <c-r><c-w>
 
 " When you press gv you vimgrep after the selected text
