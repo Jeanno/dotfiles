@@ -6,7 +6,7 @@ THISDIR=$(dirname $THISPATH)
 ##
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE="~/.cache/zsh/history"
+HISTFILE=~/.cache/zsh/.zsh_history
 
 ##
 # File navigation
