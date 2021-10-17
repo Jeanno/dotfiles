@@ -2,6 +2,16 @@ THISPATH=$0:A
 THISDIR=$(dirname $THISPATH)
 
 ##
+# Edit command
+##
+export EDITOR=vim
+set -o vi
+bindkey -v
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+##
 # History
 ##
 HISTSIZE=10000
@@ -43,16 +53,6 @@ fi
 #
 # bat: cat with syntax highlighting
 ##
-
-##
-# Edit command
-##
-export EDITOR=vim
-set -o vi
-autoload edit-command-line
-zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey -v
 
 ##
 # Custom scripts
