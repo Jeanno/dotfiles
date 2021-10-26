@@ -391,30 +391,14 @@ Plug 'airblade/vim-gitgutter'
 
 "" Lint and syntax
 Plug 'dense-analysis/ale'
-Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim' " TypeScript syntax
-"Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'apple/swift', {'rtp': 'utils/vim/','name': 'Swift-Syntax'}
 
-Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+"" nvim LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 
 call plug#end()
 
-let g:coc_global_extensions = [ 'coc-tsserver' ]
 set noshowmode
-
-function! s:MyGoToDefinition()
-  if CocAction('jumpDefinition')
-    return v:true
-  endif
-
-  let ret = execute("silent! normal \<C-]>")
-  if ret =~ "Error"
-    call searchdecl(expand('<cword>'))
-  endif
-endfunction
-
-nmap <silent> gd :call <SID>MyGoToDefinition()<CR>
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
@@ -425,3 +409,4 @@ nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
 nnoremap <leader>orv :tabe ~/dotfiles/.vimrc<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
 
+source ~/dotfiles/vimrc.d/lsp-config.vim

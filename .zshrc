@@ -4,7 +4,7 @@ THISDIR=$(dirname $THISPATH)
 ##
 # Edit command
 ##
-export EDITOR=vim
+export EDITOR=nvim
 set -o vi
 bindkey -v
 autoload edit-command-line
