@@ -61,7 +61,6 @@ set tm=400
 " Enable syntax highlighting
 syntax enable
 
-colorscheme monokai-bold
 set background=dark
 set cursorline
 
@@ -372,6 +371,9 @@ nnoremap <leader>r :!<up><cr>
 
 call plug#begin('~/.vim/plugged')
 
+"" Colorscheme
+Plug 'flazz/vim-colorschemes'
+
 "" UI
 Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
@@ -397,6 +399,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 
 call plug#end()
+
+set termguicolors
+colorscheme monokai
 
 set noshowmode
 
