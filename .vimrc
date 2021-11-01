@@ -401,7 +401,7 @@ Plug 'hrsh7th/nvim-compe'
 call plug#end()
 
 set termguicolors
-colorscheme monokai
+colorscheme monokai-bold
 
 set noshowmode
 
@@ -414,4 +414,7 @@ nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
 nnoremap <leader>orv :tabe ~/dotfiles/.vimrc<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
 
-source ~/dotfiles/vimrc.d/lsp-config.vim
+if has('nvim')
+  source ~/dotfiles/vimrc.d/lsp-config.vim
+endif
+
