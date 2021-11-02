@@ -398,6 +398,9 @@ Plug 'dense-analysis/ale'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 
+"" Github copilot
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 set termguicolors
