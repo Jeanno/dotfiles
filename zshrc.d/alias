@@ -16,9 +16,11 @@ alias gvd="git difftool --tool=vimdiff --no-prompt"
 alias v="nvim"
 
 alias t="tmux"
+alias ta="tmux attach"
 
 alias n="npm"
 alias nr="npm run"
+alias ns="npm start"
 
 alias lg="lazygit"
 
