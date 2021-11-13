@@ -226,7 +226,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 nnoremap <leader>f :Files<cr>
 nnoremap <C-p> :Files<cr>
-nnoremap <leader>g :Rg
+nnoremap <leader>g :Rg 
 nnoremap <leader>G :Rg <c-r><c-w>
 nnoremap <leader>t :BTags<cr>
 nnoremap <leader>T :Tags <c-r><c-w>
