@@ -396,7 +396,14 @@ Plug 'dense-analysis/ale'
 
 "" nvim LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+
+"" Auto completion plugin
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 "" Github copilot
 Plug 'github/copilot.vim'
@@ -419,5 +426,6 @@ nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
 
 if has('nvim')
   source ~/dotfiles/vimrc.d/lsp-config.vim
+  source ~/dotfiles/vimrc.d/cmp-config.vim
 endif
 

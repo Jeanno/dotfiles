@@ -31,4 +31,3 @@ require'lspconfig'.jsonls.setup {
 }
 EOF
 
-luafile ~/dotfiles/vimrc.d/lua/compe-config.lua
