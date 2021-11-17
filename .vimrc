@@ -133,12 +133,16 @@ set belloff=
 set fdm=indent
 set foldlevel=2
 set t_TE= t_TI=
+
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
 catch
 endtry
+
+" Sync clipboard register with unnamed register
+set clipboard^=unnamed
 
 
 
