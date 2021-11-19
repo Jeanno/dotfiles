@@ -5,6 +5,7 @@ set history=5000
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+autocmd BufRead *.m :set filetype=objc
 
 " Set to auto read when a file is changed from the outside
 set autoread
