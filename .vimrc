@@ -1,7 +1,3 @@
-""" Configuration
-" Sets how many lines of history VIM has to remember
-set history=5000
-
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -105,6 +101,7 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+autocmd FileType * setlocal formatoptions-=ro
 
 " Remember info about open buffers on close
 set viminfo^=%
@@ -433,4 +430,3 @@ if has('nvim')
   source ~/dotfiles/vimrc.d/lsp-config.vim
   source ~/dotfiles/vimrc.d/cmp-config.vim
 endif
-
