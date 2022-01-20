@@ -26,3 +26,4 @@ alias ns="npm start"
 
 alias lg="lazygit"
 
+alias tf="terraform"
