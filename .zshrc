@@ -11,6 +11,9 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# Bind tab to accept zsh autosuggestions
+bindkey -s '\t' autosuggest-accept
+
 ##
 # History
 ##
@@ -56,10 +59,11 @@ fi
 
 ##
 # Custom scripts
-##
+#
 export PATH=$PATH:$THISDIR/bin
 
 source "$THISDIR/zshrc.d/alias"
+source "$THISDIR/zshrc.d/functions"
 
 # powerlevel10k
 source $THISDIR/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
