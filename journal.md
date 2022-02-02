@@ -6,6 +6,7 @@ enter // copy!
 c-] // tmux paste
 
 # Vim Note
+viwp // visual mode, select inner word, paste to replace
 
 :help g
 :cn :cp Quickfix navigation
@@ -43,4 +44,4 @@ last selected `<
 
 :filter-in
 :filter-out
-ctrl-l literal mode
+ctrl-l // literal mode

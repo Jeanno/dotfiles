@@ -11,9 +11,6 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Bind tab to accept zsh autosuggestions
-bindkey -s '\t' autosuggest-accept
-
 ##
 # History
 ##
