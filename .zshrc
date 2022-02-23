@@ -68,5 +68,3 @@ source $THISDIR/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f $THISDIR/.p10k.zsh ]] || source $THISDIR/.p10k.zsh
 
 source $THISDIR/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-neofetch
