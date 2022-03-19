@@ -1,3 +1,6 @@
+# zsh Note
+d  - Show directory history, enter digit to jump
+
 # Tmux Note
 ## Copy text
 c-[ // enter copy mode
@@ -8,6 +11,7 @@ c-] // tmux paste
 # Vim Note
 viwp // visual mode, select inner word, paste to replace
 
+:help index
 :help g
 :cn :cp Quickfix navigation
 

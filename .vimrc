@@ -155,10 +155,6 @@ nmap <leader>w :w!<cr>
 
 "" Visual mode related
 
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :call VisualSelection('f')<CR>
-vnoremap <silent> # :call VisualSelection('b')<CR>
-
 "" Moving around, tabs, windows and buffers
 
 " Disable highlight when <leader><cr> is pressed
@@ -233,14 +229,9 @@ nnoremap <leader>G :Rg <c-r><c-w>
 nnoremap <leader>t :BTags<cr>
 nnoremap <leader>T :Tags <c-r><c-w>
 
-" When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSelection('gv')<CR>
-
 " Vimgreps in the current file
 map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
 
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 " Do :help cope if you are unsure what cope is. It's super useful!
 "
@@ -286,28 +277,6 @@ function! CmdLine(str)
     emenu Foo.Bar
     unmenu Foo
 endfunction
-
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
 
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -407,6 +376,11 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
+"" Refactor
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/refactoring.nvim'
+
 "" Github copilot
 Plug 'github/copilot.vim'
 
@@ -429,4 +403,5 @@ nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
 if has('nvim')
   source ~/dotfiles/vimrc.d/lsp-config.vim
   source ~/dotfiles/vimrc.d/cmp-config.vim
+  source ~/dotfiles/vimrc.d/refactoring-config.vim
 endif
