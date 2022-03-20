@@ -348,8 +348,8 @@ let g:ale_sign_column_always = 1
 
 nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
 nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
-nnoremap <leader>orv :tabe ~/dotfiles/.vimrc<cr> " Open RC for vim
-nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
+nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/init.vim<cr> " Open RC for vim
+nnoremap <leader>orz :tabe ~/.zshrc<cr> " Open RC for zsh
 
 if has('nvim')
   runtime vimrc.d/lsp-config.vim
