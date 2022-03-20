@@ -365,8 +365,6 @@ Plug 'airblade/vim-gitgutter'
 "" Lint and syntax
 Plug 'dense-analysis/ale'
 
-"" nvim LSP
-Plug 'neovim/nvim-lspconfig'
 
 "" Auto completion plugin
 Plug 'hrsh7th/vim-vsnip'
@@ -376,10 +374,17 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
+"" nvim LSP
+if has('nvim')
+  Plug 'neovim/nvim-lspconfig'
+endif
+
 "" Refactor
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-lua/plenary.nvim'
-Plug 'ThePrimeagen/refactoring.nvim'
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'ThePrimeagen/refactoring.nvim'
+endif
 
 "" Github copilot
 Plug 'github/copilot.vim'
@@ -401,7 +406,7 @@ nnoremap <leader>orv :tabe ~/dotfiles/.vimrc<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
 
 if has('nvim')
-  source ~/df/nvim/.config/nvim/vimrc.d/lsp-config.vim
-  source ~/df/nvim/.config/nvim/vimrc.d/cmp-config.vim
-  source ~/df/nvim/.config/nvim/vimrc.d/refactoring-config.vim
+  runtime vimrc.d/lsp-config.vim
+  runtime vimrc.d/cmp-config.vim
+  runtime vimrc.d/refactoring-config.vim
 endif
