@@ -110,9 +110,6 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
 set path+=**
 set number
 set relativenumber
@@ -169,12 +166,6 @@ nnoremap <M-h> :vertical resize -3<cr>
 nnoremap <M-l> :vertical resize +3<cr>
 nnoremap <M-j> :resize -3<cr>
 nnoremap <M-k> :resize +3<cr>
-
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
-" Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -250,7 +241,6 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 " map <leader>p :cp<cr>
 
 
-
 "" Spell checking
 map <leader>ss :setlocal spell!<cr>
 
@@ -261,51 +251,8 @@ map <leader>sa zg
 map <leader>s? z=
 
 "" Misc
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
 " Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
-"" Helper functions
-
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
-
-" Don't close window, when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
-
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
-
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
-
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
-endfunction
 
 inoremap jk <Esc>
 
@@ -339,7 +286,6 @@ nnoremap <leader>r :!<up><cr>
 
 
 """ Plug-in
-
 call plug#begin('~/.vim/plugged')
 
 "" Colorscheme
