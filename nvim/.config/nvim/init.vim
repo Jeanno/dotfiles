@@ -401,7 +401,7 @@ nnoremap <leader>orv :tabe ~/dotfiles/.vimrc<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/dotfiles/.zshrc<cr> " Open RC for zsh
 
 if has('nvim')
-  source ~/dotfiles/vimrc.d/lsp-config.vim
-  source ~/dotfiles/vimrc.d/cmp-config.vim
-  source ~/dotfiles/vimrc.d/refactoring-config.vim
+  source ~/df/nvim/.config/nvim/vimrc.d/lsp-config.vim
+  source ~/df/nvim/.config/nvim/vimrc.d/cmp-config.vim
+  source ~/df/nvim/.config/nvim/vimrc.d/refactoring-config.vim
 endif
