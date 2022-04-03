@@ -219,6 +219,7 @@ nnoremap <leader>g :Rg
 nnoremap <leader>G :Rg <c-r><c-w>
 nnoremap <leader>t :BTags<cr>
 nnoremap <leader>T :Tags <c-r><c-w>
+nnoremap <leader>l :BLines<cr>
 
 " Vimgreps in the current file
 map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
