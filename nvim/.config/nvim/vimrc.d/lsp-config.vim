@@ -16,10 +16,10 @@ autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 
 lua << EOF
 local util = require'lspconfig'.util;
+require'lspconfig'.gopls.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.eslint.setup{}
-require'lspconfig'.sourcekit.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.jsonls.setup {
     commands = {
@@ -29,11 +29,6 @@ require'lspconfig'.jsonls.setup {
         end
       }
     }
-}
-require'lspconfig'.sourcekit.setup {
-    cmd = { "sourcekit-lsp" };
-    filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" };
-    root_dir = util.root_pattern("Package.swift", ".git");
 }
 EOF
 
