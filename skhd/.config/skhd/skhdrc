@@ -1,6 +1,13 @@
 # Terminal
-f12 : open -a "/Applications/Alacritty.app"
-f11 : open -a "/Applications/Google Chrome.app"
-f10 : open -a "/Applications/Slack.app"
+f1 : skhd -k "cmd - tab"
+# f2 is switching windows within the same app
+
+f6 : skhd -k 'ctrl + shift - tab' # prev tab
+f7 : skhd -k 'ctrl - tab'         # next tab
+f8 : skhd -k 'cmd - w'            # close tab
+
 f9 : open -a "/System/Library/CoreServices/Finder.app"
+f10 : open -a "/Applications/Slack.app"
+f11 : open -a "/Applications/Google Chrome.app"
+f12 : open -a "/Applications/Alacritty.app"
 
