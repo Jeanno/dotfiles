@@ -1,13 +1,28 @@
-# Terminal
+:: default : osascript -e 'display notification "Default mode"'
+
 f1 : skhd -k "cmd - tab"
 # f2 is switching windows within the same app
 
-f6 : skhd -k 'ctrl + shift - tab' # prev tab
-f7 : skhd -k 'ctrl - tab'         # next tab
-f8 : skhd -k 'cmd - w'            # close tab
+f7 : skhd -k 'ctrl + shift - tab' # prev tab
+f8 : skhd -k 'ctrl - tab'         # next tab
 
 f9 : open -a "/System/Library/CoreServices/Finder.app"
 f10 : open -a "/Applications/Slack.app"
 f11 : open -a "/Applications/Google Chrome.app"
 f12 : open -a "/Applications/Alacritty.app"
+
+:: nav : osascript -e 'display notification "Navigation mode"'
+
+0xB3 ; nav
+nav < 0xB3 ; default
+nav < 1 : skhd -k 'ctrl - 1'
+nav < 2 : skhd -k 'ctrl - 2'
+nav < 3 : skhd -k 'ctrl - 3'
+nav < 4 : skhd -k 'ctrl - 4'
+nav < q : skhd -k 'cmd - tab'
+nav < w : skhd -k 'f2'
+nav < e : skhd -k 'f3'
+nav < a : skhd -k 'ctrl + shift - tab'
+nav < s : skhd -k 'ctrl - tab'
+nav < d : skhd -k 'cmd - w'
 
