@@ -26,3 +26,13 @@ nav < a : skhd -k 'ctrl + shift - tab'
 nav < s : skhd -k 'ctrl - tab'
 nav < d : skhd -k 'cmd - w'
 
+# Split screen
+nav < u : skhd -k 'ctrl + alt - right'; skhd -k 'cmd - tab'; \
+  skhd -k 'ctrl + alt - left'; skhd -k 'cmd - tab';
+nav < i : skhd -k 'ctrl + alt - t'; skhd -k 'cmd - tab'; \
+  skhd -k 'ctrl + alt - d'; skhd -k 'cmd - tab';
+nav < o : skhd -k 'ctrl + alt - right'; skhd -k 'f2'; \
+  skhd -k 'ctrl + alt - left'; skhd -k 'f2';
+nav < p : skhd -k 'ctrl + alt - t'; skhd -k 'f2'; \
+  skhd -k 'ctrl + alt - d'; skhd -k 'f2';
+
