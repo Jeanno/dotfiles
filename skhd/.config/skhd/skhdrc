@@ -7,11 +7,11 @@ nav < 0xB3 ; default
 f1 : skhd -k "cmd - tab"
 # f2 is switching windows within the same app
 
-f5 : skhd -k 'ctrl + shift - tab' # prev tab
-f6 : skhd -k 'ctrl - tab'         # next tab
+f3 : skhd -k 'cmd + shift - 0x21' # prev tab
+f4 : skhd -k 'cmd + shift - 0x1E' # next tab
 
 # Applications
-default, nav < f7 : open -a '/Applications/Signal.app'
+default, nav < f7 : open -a '/Applications/Spotify.app'
 default, nav < f8 : open -a '/Applications/Telegram.app'
 default, nav < f9 : open -a '/System/Library/CoreServices/Finder.app'
 default, nav < f10 : open -a '/Applications/Slack.app'
