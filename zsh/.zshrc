@@ -84,7 +84,8 @@ source $THISDIR/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/jeanno/bin
+#export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/jeanno/bin
+export PATH=/Users/jeanno/bin:$PATH
 export PATH=/usr/local/go/bin:~/go/bin:$PATH
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 
