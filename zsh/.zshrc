@@ -70,7 +70,7 @@ fi
 ##
 # Custom scripts
 #
-export PATH=$PATH:$THISDIR/bin
+export PATH=$PATH:$THISDIR/dotfiles/bin
 
 source "$THISDIR/zshrc.d/alias"
 source "$THISDIR/zshrc.d/functions"
