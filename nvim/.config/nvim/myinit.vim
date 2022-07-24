@@ -1,7 +1,6 @@
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
-autocmd BufRead *.m :set filetype=objc
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -113,7 +112,7 @@ set path+=**
 set number
 set relativenumber
 set complete-=i
-set colorcolumn=80,100
+set colorcolumn=80
 set mouse=a
 
 set splitbelow
@@ -351,8 +350,5 @@ nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
 nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/init.vim<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/.zshrc<cr> " Open RC for zsh
 
-if has('nvim')
-  runtime vimrc.d/lsp-config.vim
-  runtime vimrc.d/cmp-config.vim
-  runtime vimrc.d/refactoring-config.vim
-endif
+runtime vimrc.d/lsp-config.vim
+runtime vimrc.d/cmp-config.vim
