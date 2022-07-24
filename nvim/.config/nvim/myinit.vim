@@ -351,4 +351,3 @@ nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/init.vim<cr> " Open RC f
 nnoremap <leader>orz :tabe ~/.zshrc<cr> " Open RC for zsh
 
 runtime vimrc.d/lsp-config.vim
-runtime vimrc.d/cmp-config.vim
