@@ -196,23 +196,19 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+" Delete trailing white space on save
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
+
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.ts :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
-
 
 "" vimgrep searching and cope displaying
-
 nnoremap <leader>f :Files<cr>
-nnoremap <C-p> :Files<cr>
 nnoremap <leader>g :Rg 
 nnoremap <leader>G :Rg <c-r><c-w>
 nnoremap <leader>t :BTags<cr>
@@ -325,11 +321,9 @@ if has('nvim')
 endif
 
 "" Refactor
-if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'ThePrimeagen/refactoring.nvim'
-endif
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'ThePrimeagen/refactoring.nvim'
 
 "" Github copilot
 Plug 'github/copilot.vim'
