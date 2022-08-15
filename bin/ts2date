@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+timestamp=$1
+
+if [ -z "$timestamp" ]; then
+    echo "Usage: $0 <timestamp>"
+    exit 1
+fi
+
+# if timestamp is larger than 1000000000000, divide it by 1000
+if [ $timestamp -gt 100000000000 ]; then
+    timestamp=$(($timestamp / 1000))
+fi
+
+# Mac
+date -r $timestamp
