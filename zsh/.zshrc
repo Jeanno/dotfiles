@@ -105,3 +105,10 @@ if [ -f '/Users/jeanno/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jeanno/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeanno/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
+
+# bun completions
+[ -s "/Users/jeanno/.bun/_bun" ] && source "/Users/jeanno/.bun/_bun"
+
+# bun
+export BUN_INSTALL="/Users/jeanno/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
