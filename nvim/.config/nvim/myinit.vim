@@ -339,9 +339,11 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
+let g:copilot_node_command = '/usr/local/Cellar/node@16/16.16.0/bin/node'
+
 nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
 nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
-nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/init.vim<cr> " Open RC for vim
+nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/myinit.vim<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/.zshrc<cr> " Open RC for zsh
 
 runtime vimrc.d/lsp-config.vim
