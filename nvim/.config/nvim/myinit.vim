@@ -294,6 +294,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-commentary'
 
 "" Fuzzy
 Plug 'junegunn/fzf.vim'

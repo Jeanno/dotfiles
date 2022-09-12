@@ -1,7 +1,7 @@
 :: default : osascript -e 'display notification "Default mode"'
 :: nav : osascript -e 'display notification "Navigation mode"'
 
-0xB3 ; nav
+# 0xB3 ; nav
 nav < 0xB3 ; default
 
 f1 : skhd -k "cmd - tab"
@@ -11,8 +11,8 @@ f3 : skhd -k 'cmd + shift - 0x21' # prev tab
 f4 : skhd -k 'cmd + shift - 0x1E' # next tab
 
 # Applications
-default, nav < f7 : open -a '/Applications/Signal.app'
-default, nav < f8 : open -a '/Applications/Telegram.app'
+default, nav < f7 : open -a '/Applications/Telegram.app'
+default, nav < f8 : open -a '/Applications/Signal.app'
 default, nav < f9 : open -a '/System/Library/CoreServices/Finder.app'
 default, nav < f10 : open -a '/Applications/Spotify.app'
 default, nav < f11 : open -a '/Applications/Google Chrome.app'
