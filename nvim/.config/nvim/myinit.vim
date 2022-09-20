@@ -124,7 +124,7 @@ set timeoutlen=300
 set belloff=
 
 set fdm=indent
-set foldlevel=2
+set foldlevel=1
 set t_TE= t_TI=
 
 " Specify the behavior when switching between buffers
