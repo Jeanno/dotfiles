@@ -82,11 +82,10 @@ source $THISDIR/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
 source $THISDIR/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-# Customize to your needs...
-#export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/jeanno/bin
-export PATH=/Users/jeanno/bin:$PATH
+# PATH configs
+export PATH=~/bin:$PATH
 export PATH=/usr/local/go/bin:~/go/bin:$PATH
-export PATH="/Users/jeanno/etc/flutter/bin":$PATH
+export PATH=~/etc/flutter/bin:$PATH
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -105,10 +104,3 @@ if [ -f '/Users/jeanno/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jeanno/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeanno/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-
-# bun completions
-[ -s "/Users/jeanno/.bun/_bun" ] && source "/Users/jeanno/.bun/_bun"
-
-# bun
-export BUN_INSTALL="/Users/jeanno/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
