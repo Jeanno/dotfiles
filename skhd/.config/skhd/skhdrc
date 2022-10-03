@@ -4,11 +4,9 @@
 # 0xB3 ; nav
 nav < 0xB3 ; default
 
-f1 : skhd -k "cmd - tab"
-# f2 is switching windows within the same app
-
-f3 : skhd -k 'cmd + shift - 0x21' # prev tab
-f4 : skhd -k 'cmd + shift - 0x1E' # next tab
+f1 : skhd -k 'cmd + shift - 0x21' # prev tab
+f2 : skhd -k 'cmd + shift - 0x1E' # next tab
+f3 : skhd -k "cmd - tab"
 
 # Applications
 default, nav < f7 : open -a '/Applications/Telegram.app'

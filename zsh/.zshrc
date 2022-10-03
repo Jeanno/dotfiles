@@ -97,6 +97,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(
 
 . /usr/local/etc/profile.d/z.sh
 
+[[ ! -f ~/.zshrc-local ]] || source ~/.zshrc-local
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jeanno/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jeanno/Downloads/google-cloud-sdk/path.zsh.inc'; fi
