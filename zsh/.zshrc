@@ -87,6 +87,7 @@ export PATH=~/bin:$PATH
 export PATH=/usr/local/go/bin:~/go/bin:$PATH
 export PATH=~/etc/flutter/bin:$PATH
 export PATH="/usr/local/opt/binutils/bin:$PATH"
+export PATH=/usr/local/libwebp-1.2.4-mac-arm64/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -104,4 +105,5 @@ if [ -f '/Users/jeanno/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jeanno/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeanno/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
 

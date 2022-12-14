@@ -149,6 +149,8 @@ let g:mapleader = " "
 nmap <leader>w :w!<cr>
 
 "" Visual mode related
+" <leader>v to select last pasted lines
+nnoremap <leader>v '[V']
 
 "" Moving around, tabs, windows and buffers
 
@@ -206,8 +208,8 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.ts :call DeleteTrailingWS()
+autocmd BufWrite *.swift :call DeleteTrailingWS()
 
-"" vimgrep searching and cope displaying
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>g :Rg 
 nnoremap <leader>G :Rg <c-r><c-w>
@@ -215,9 +217,9 @@ nnoremap <leader>t :BTags<cr>
 nnoremap <leader>T :Tags <c-r><c-w>
 nnoremap <leader>l :BLines<cr>
 
+"" vimgrep searching and cope displaying
 " Vimgreps in the current file
 map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
-
 
 " Do :help cope if you are unsure what cope is. It's super useful!
 "
@@ -340,7 +342,7 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
-let g:copilot_node_command = '/usr/local/Cellar/node@16/16.16.0/bin/node'
+let g:copilot_node_command = '/usr/local/Cellar/node@16/16.18.1/bin/node'
 
 nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
 nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
