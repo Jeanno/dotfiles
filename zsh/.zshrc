@@ -53,6 +53,10 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+lastdl () {
+    ls -dt ~/Downloads/* | head -n 1
+}
+
 ## FZF
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
