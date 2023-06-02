@@ -342,7 +342,10 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
-let g:copilot_node_command = '/usr/local/Cellar/node@16/16.18.1/bin/node'
+let g:copilot_node_command = '/usr/local/Cellar/node@16/16.20.0/bin/node'
+
+
+nnoremap <leader>j :Gvdiffsplit<cr>
 
 nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
 nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
