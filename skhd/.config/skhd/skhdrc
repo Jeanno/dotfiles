@@ -14,7 +14,8 @@ default, nav < f7 : open -a '/Applications/Telegram.app'
 default, nav < f8 : open -a '/Applications/Signal.app'
 default, nav < f9 : open -a '/System/Library/CoreServices/Finder.app'
 default, nav < f10 : open -a '/Applications/Spotify.app'
-default, nav < f11 : open -a '/Applications/Google Chrome.app'
+#default, nav < f11 : open -a '/Applications/Google Chrome.app'
+default, nav < f11 : open -a '/Applications/Arc.app'
 default, nav < f12 : open -a '/Applications/Alacritty.app'
 
 

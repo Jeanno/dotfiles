@@ -208,6 +208,7 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
 autocmd BufWrite *.ts :call DeleteTrailingWS()
+autocmd BufWrite *.tsx :call DeleteTrailingWS()
 autocmd BufWrite *.swift :call DeleteTrailingWS()
 
 nnoremap <leader>f :Files<cr>
@@ -326,7 +327,6 @@ endif
 "" Refactor
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
-Plug 'ThePrimeagen/refactoring.nvim'
 
 "" Github copilot
 Plug 'github/copilot.vim'
@@ -342,8 +342,8 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
-let g:copilot_node_command = '/usr/local/Cellar/node@16/16.20.0/bin/node'
-
+" let g:copilot_node_command = '/usr/local/Cellar/node@16/16.20.1_1/bin/node'
+let g:copilot_node_command = '/usr/local/bin/node'
 
 nnoremap <leader>j :Gvdiffsplit<cr>
 
