@@ -1,11 +1,32 @@
 #!/usr/bin/env bash
 
-# if parameter 1 is "enable"
+function is_valid_dns() {
+    if nslookup google.com 192.168.1.100 &> /dev/null; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+function set_dns() {
+    target_dns=$1
+    current_dns=$(networksetup -getdnsservers Wi-Fi | head -n 1)
+    if [ "$current_dns" != "$target_dns" ]; then
+        networksetup -setdnsservers Wi-Fi $target_dns
+    fi
+}
+
 if [ "$1" = "enable" ]; then
-    networksetup -setdnsservers Wi-Fi 192.168.1.100
+    set_dns 192.168.1.100
 elif [ "$1" = "disable" ]; then
     networksetup -setdnsservers Wi-Fi empty
+elif [ "$1" = "auto" ]; then
+    if is_valid_dns; then
+        set_dns 192.168.1.100
+    else
+        networksetup -setdnsservers Wi-Fi empty
+    fi
 else
-    echo "Usage: $0 [enable|disable]"
+    echo "Usage: $0 [enable|disable|auto]"
 fi
 
