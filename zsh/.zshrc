@@ -77,6 +77,7 @@ export PATH=$PATH:$THISDIR/dotfiles/bin
 
 source "$THISDIR/zshrc.d/alias"
 source "$THISDIR/zshrc.d/functions"
+source "$THISDIR/zshrc.d/copilot"
 
 # powerlevel10k
 source $THISDIR/zsh-plugins/powerlevel10k/powerlevel10k.zsh-theme
@@ -88,10 +89,11 @@ source $THISDIR/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # PATH configs
 export PATH=~/bin:$PATH
-export PATH=/usr/local/go/bin:~/go/bin:$PATH
 export PATH=~/etc/flutter/bin:$PATH
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH=/usr/local/libwebp-1.2.4-mac-arm64/bin:$PATH
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
