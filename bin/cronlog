@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+file=/tmp/cron.log
+
+while IFS= read -r line; do
+	echo "$(date '+%Y-%m-%d %H:%M:%S') $1 $line" >> $file
+done
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') $1 DONE" >> $file

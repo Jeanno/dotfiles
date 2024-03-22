@@ -13,18 +13,27 @@ function set_dns() {
     current_dns=$(networksetup -getdnsservers Wi-Fi | head -n 1)
     if [ "$current_dns" != "$target_dns" ]; then
         networksetup -setdnsservers Wi-Fi $target_dns
+        echo "DNS set to Pi-hole 192.168.1.100"
+    fi
+}
+
+function remove_dns() {
+    current_dns=$(networksetup -getdnsservers Wi-Fi | head -n 1)
+    if [ "$current_dns" != "There" ]; then
+        networksetup -setdnsservers Wi-Fi empty
+        echo "DNS set to empty"
     fi
 }
 
 if [ "$1" = "enable" ]; then
     set_dns 192.168.1.100
 elif [ "$1" = "disable" ]; then
-    networksetup -setdnsservers Wi-Fi empty
+    remove_dns
 elif [ "$1" = "auto" ]; then
     if is_valid_dns; then
         set_dns 192.168.1.100
     else
-        networksetup -setdnsservers Wi-Fi empty
+        remove_dns
     fi
 else
     echo "Usage: $0 [enable|disable|auto]"
