@@ -19,7 +19,7 @@ function set_dns() {
 
 function remove_dns() {
     current_dns=$(networksetup -getdnsservers Wi-Fi | head -n 1)
-    if [ "$current_dns" != "There" ]; then
+    if [ "${current_dns:0:5}" != "There" ]; then
         networksetup -setdnsservers Wi-Fi empty
         echo "DNS set to empty"
     fi
