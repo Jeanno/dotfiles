@@ -25,7 +25,7 @@ require'lspconfig'.gopls.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.eslint.setup{}
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.jsonls.setup {
     commands = {
       Format = {
