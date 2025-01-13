@@ -282,57 +282,6 @@ nnoremap <leader>r :!<up><cr>
 " :range co. copy multiple lines
 " Surround plugin
 
-
-""" Plug-in
-call plug#begin('~/.vim/plugged')
-
-"" Colorscheme
-Plug 'flazz/vim-colorschemes'
-
-"" UI
-Plug 'itchyny/lightline.vim'
-" Plug 'vim-airline/vim-airline'
-
-"" Enhance
-Plug 'tpope/vim-surround'
-Plug 'unblevable/quick-scope'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-commentary'
-
-"" Fuzzy
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-"" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-"" Lint and syntax
-Plug 'dense-analysis/ale'
-
-
-"" Auto completion plugin
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-
-"" nvim LSP
-if has('nvim')
-  Plug 'neovim/nvim-lspconfig'
-endif
-
-"" Refactor
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-lua/plenary.nvim'
-
-"" Github copilot
-Plug 'github/copilot.vim'
-
-call plug#end()
-
 set termguicolors
 colorscheme monokai-bold
 
@@ -342,9 +291,6 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_sign_column_always = 1
 
-" let g:copilot_node_command = '/usr/local/Cellar/node@16/16.20.1_1/bin/node'
-let g:copilot_node_command = '/usr/local/bin/node'
-
 nnoremap <leader>j :Gvdiffsplit<cr>
 
 nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
@@ -352,4 +298,3 @@ nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
 nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/myinit.vim<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/.zshrc<cr> " Open RC for zsh
 
-runtime vimrc.d/lsp-config.vim

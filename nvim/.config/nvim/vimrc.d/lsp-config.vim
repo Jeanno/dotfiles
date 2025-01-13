@@ -13,27 +13,3 @@ nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<CR>
 " autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
-
-lua << EOF
-local util = require'lspconfig'.util;
-require'lspconfig'.sourcekit.setup{
-  root_dir = function(fname)
-    return util.root_pattern('SignSticker.xcworkspace', 'Package.swift', '.git')(fname)
-  end;
-}
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.eslint.setup{}
-require'lspconfig'.ts_ls.setup{}
-require'lspconfig'.jsonls.setup {
-    commands = {
-      Format = {
-        function()
-          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-        end
-      }
-    }
-}
-EOF
-
