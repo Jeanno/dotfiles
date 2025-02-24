@@ -295,6 +295,6 @@ nnoremap <leader>j :Gvdiffsplit<cr>
 
 nnoremap <leader>nj :sp ~/notes/journal.md<cr> " Notes - Journal
 nnoremap <leader>nl :sp ~/notes/<cr> " Notes List
-nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/myinit.vim<cr> " Open RC for vim
+nnoremap <leader>orv :tabe ~/dotfiles/nvim/.config/nvim/init.lua<cr> " Open RC for vim
 nnoremap <leader>orz :tabe ~/.zshrc<cr> " Open RC for zsh
 

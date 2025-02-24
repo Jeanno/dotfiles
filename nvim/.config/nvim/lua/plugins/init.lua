@@ -20,6 +20,11 @@ local plugins = {
     end,
   },
 
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+  },
+
   -- Auto Completion
   {
     "hrsh7th/nvim-cmp",
