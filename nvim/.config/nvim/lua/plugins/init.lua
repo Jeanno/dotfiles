@@ -16,7 +16,46 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      -- First load your LSP configurations
       require("lsp")
+
+      -- Set up keybindings via on_attach function
+      local on_attach = function(client, bufnr)
+        local opts = { noremap = true, silent = true, buffer = bufnr }
+
+        -- Convert your Vim keybindings to Lua
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+        vim.keymap.set('n', '<C-n>', vim.diagnostic.goto_next, opts)
+        vim.keymap.set('n', '<C-p>', vim.diagnostic.goto_prev, opts)
+        vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
+
+        -- Auto-formatting (updated for Neovim 0.11)
+        if client.server_capabilities.documentFormattingProvider then
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+              -- Use the new format API instead of formatting_sync (which is deprecated)
+              if vim.bo.filetype == "python" or vim.bo.filetype == "javascriptreact" then
+                vim.lsp.buf.format({ async = false, timeout_ms = 1000 })
+              end
+            end,
+          })
+        end
+      end
+
+      -- Apply on_attach to all language servers
+      local servers = {'ts_ls', 'pyright', 'gopls', 'sourcekit', 'bashls', 'jsonls'}
+      for _, lsp in ipairs(servers) do
+        require('lspconfig')[lsp].setup({
+          on_attach = on_attach,
+          -- other settings can be added here
+        })
+      end
     end,
   },
 
