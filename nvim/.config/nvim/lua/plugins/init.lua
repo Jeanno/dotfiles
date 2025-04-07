@@ -22,11 +22,6 @@ local plugins = {
       -- Set up keybindings via on_attach function
       local on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
-
-        -- Convert your Vim keybindings to Lua
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
         vim.keymap.set('n', '<C-n>', vim.diagnostic.goto_next, opts)
         vim.keymap.set('n', '<C-p>', vim.diagnostic.goto_prev, opts)
@@ -47,7 +42,7 @@ local plugins = {
       end
 
       -- Apply on_attach to all language servers
-      local servers = {'ts_ls', 'pyright', 'gopls', 'sourcekit', 'bashls', 'jsonls'}
+      local servers = {'ts_ls', 'pyright', 'gopls', 'sourcekit', 'bashls', 'jsonls', 'eslint'}
       for _, lsp in ipairs(servers) do
         require('lspconfig')[lsp].setup({
           on_attach = on_attach,
