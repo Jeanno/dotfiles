@@ -72,6 +72,30 @@ local plugins = {
   {
     "github/copilot.vim",
   },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+    },
+    build = "make tiktoken", -- Only on MacOS or Linux
+    opts = {
+      model = "claude-3.7-sonnet",
+      sticky = {
+        -- '#files',
+      },
+    },
+    config = function(_, opts)
+      local chat = require("CopilotChat")
+      chat.setup(opts)
+
+      -- Set up keybindings
+      vim.keymap.set({ "n", "v" }, "<leader>ss", function()
+        chat.open()
+      end, { noremap = true, silent = true })
+    end,
+    -- See Commands section for default commands if you want to lazy load on them
+  },
 
   -- Files
   {
