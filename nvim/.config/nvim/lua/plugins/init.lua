@@ -22,10 +22,19 @@ local plugins = {
       -- Set up keybindings via on_attach function
       local on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
         vim.keymap.set('n', '<C-n>', vim.diagnostic.goto_next, opts)
         vim.keymap.set('n', '<C-p>', vim.diagnostic.goto_prev, opts)
         vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', 'K', function()
+          local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line('.') - 1 })
+          if #diagnostics > 0 then
+            vim.diagnostic.open_float()
+          else
+            vim.lsp.buf.hover()
+          end
+        end, { desc = 'Contextual: diagnostics or hover' })
 
         -- Auto-formatting (updated for Neovim 0.11)
         if client.server_capabilities.documentFormattingProvider then
@@ -130,6 +139,12 @@ local plugins = {
         },
       }
     },
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
   },
 }
 
