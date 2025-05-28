@@ -30,5 +30,3 @@ alias lg="lazygit"
 alias dkkill="docker kill \`docker ps | tail -n 1 | awk '{ print $1 }'\`"
 
 alias o="open"
-
-alias python="python3"
